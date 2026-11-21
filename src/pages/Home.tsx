@@ -4,6 +4,7 @@ import { go, href } from '../lib/router'
 import { supabase } from '../lib/supabase'
 import { rpc, type Workspace } from '../lib/social'
 import { Alert, Spinner } from '../components/ui'
+import Family from '../components/Family'
 
 type Invite = { id: string; workspace: string; name: string; role: string }
 
@@ -80,6 +81,7 @@ function Landing({ onStart }: { onStart: () => void }) {
           ['Pay as you go', 'Credits shared with CDM Studio: AI writing costs a few credits; X posts cost a little more because X charges per post.'],
         ].map(([t, d]) => <div key={t} className="card p-5"><h3 className="font-semibold">{t}</h3><p className="mt-1 text-sm text-slate-600">{d}</p></div>)}
       </section>
+      <Family self="cdmsocial" />
     </div>
   )
 }
